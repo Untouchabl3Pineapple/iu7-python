@@ -36,17 +36,17 @@ def main():
             showinfo(message = "Указано меньше трех точек!")
         else:
             s_coord = []
-            for i in range(len(coord) - 2):
-                for j in range(i, len(coord) - 2):
-                    x1 = coord[i][0]
-                    x2 = coord[j+1][0]
-                    x3 = coord[j+2][0]
-                    y1 = coord[i][1]
-                    y2 = coord[j+1][1]
-                    y3 = coord[j+2][1]
-                    s = abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0
-                    s_coord.append([s, [x1, x2, x3], [y1, y2, y3]])
-                    
+            for i in range(len(coord)):
+                for j in range(i + 1, len(coord)):
+                    for k in range(j + 1, len(coord)):
+                        x1 = coord[i][0]
+                        x2 = coord[j][0]
+                        x3 = coord[k][0]
+                        y1 = coord[i][1]
+                        y2 = coord[j][1]
+                        y3 = coord[k][1]
+                        s = abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0
+                        s_coord.append([s, [x1, x2, x3], [y1, y2, y3]])
             ind = 0
             max = s_coord[ind][0]
             
@@ -103,3 +103,4 @@ def main():
     root.mainloop()
 
 main()
+
