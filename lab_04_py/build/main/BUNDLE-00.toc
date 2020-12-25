@@ -1,1 +1,0 @@
-([('main', '/Users/ilyaartemev/Desktop/lab_04_py/dist/main', 'EXECUTABLE')],)
